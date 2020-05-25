@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Editing {{object.text}} {% endblock title %}
+
+{% block content %}
+
+<div class="edit-post">
+  <h3>Edit {{object.title}}</h3>
+  <form class="" action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="button">Update Post</button>
+  </form>
+</div>
+
+{% endblock content %}

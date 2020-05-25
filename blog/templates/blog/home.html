@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} Home Page {%endblock title %}
+
+{% block content %}
+
+<div class="home-block">
+  {% if object_list %}
+    {% for post in  object_list %}
+      <h5><a href="{% url 'blog:detail' post.pk %}">{{post.title}}</a></h5>
+      <p>{{post.body}}</p>
+    {% endfor %}
+  {% else %}
+    <p>No posts.</p> <a href="#">+New Post</a>
+  {% endif %}
+</div>
+
+{% endblock content %}

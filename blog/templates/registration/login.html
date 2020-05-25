@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} Login {% endblock title %}
+
+{% block content %}
+
+<div class="login-body">
+  <h3>Login to your account</h3>
+  <form class="" action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="button">Log In</button>
+  </form>
+  <p>Don't have account</p> | <a href="{% url 'accounts:signup' %}">Sign up</a>
+</div>
+
+{% endblock content %}
